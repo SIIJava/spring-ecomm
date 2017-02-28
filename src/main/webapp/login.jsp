@@ -9,7 +9,7 @@
 <body>
 
 <form role="form" action="/login" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
     <div>
         <label for="username">Username</label>
         <input type="username" name="username" id="username" required autofocus>
@@ -25,9 +25,6 @@
     <button type="submit">Sign in</button>
 </form>
 
-<#if error.isPresent()>
-<p>The email or password you have entered is invalid, try again.</p>
-</#if>
 
 </body>
 </html>

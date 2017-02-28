@@ -18,23 +18,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	UserDetailsService userDetailsService;
-
-	//	@Bean
-	//	public UserDetailsService userDetailsService() {
-	//		return new CustomUserDetailService();
-	//	}
+	
+	@Autowired
+	SuccessHandler successHandler;
 
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers("/", "/public/**").permitAll()
 		.antMatchers("/users/**").hasAuthority("ROLE_ADMIN")
-		//.antMatchers("/users/**").permitAll()
 		.and()
 		.formLogin()
 		.loginPage("/login")
 		.failureUrl("/login?error")
 		.usernameParameter("username")
 		.permitAll()
+		.successHandler(successHandler)
 		.and()
 		.logout()
 		.logoutUrl("/logout")
@@ -42,7 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.logoutSuccessUrl("/")
 		.permitAll()
 		.and()
-		.rememberMe();
+		.rememberMe()
+;
 	}
 
 	@Override
@@ -50,7 +49,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth
 		.userDetailsService(userDetailsService)
 		.passwordEncoder(new BCryptPasswordEncoder());
-		;
 	}
 
 
