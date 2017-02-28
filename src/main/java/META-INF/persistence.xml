@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="ecommocom">
+		<class>com.last.model.Adresse</class>
+		<class>com.last.model.CategorieAge</class>
+		<class>com.last.model.CategorieGenre</class>
+		<class>com.last.model.Client</class>
+		<class>com.last.model.Commande</class>
+		<class>com.last.model.Detailcommande</class>
+		<class>com.last.model.Enfant</class>
+		<class>com.last.model.Famille</class>
+		<class>com.last.model.Produit</class>
+		<class>com.last.model.ProduitGenresAge</class>
+		<class>com.last.model.Reservation</class>
+		<class>com.last.model.UserRole</class>
+		<class>com.last.model.User</class>
+		<class>com.last.model.VenteOuLocation</class>
 	</persistence-unit>
 </persistence>
