@@ -5,6 +5,8 @@
 <head>
 <meta charset="utf-8">
 <title>Create a new user</title>
+<link rel='stylesheet' href='../webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel="stylesheet" href="../resources/css/index.css">
 </head>
 <body>
 	<nav role="navigation">
@@ -15,11 +17,10 @@
 
 	<h1>Create a new user</h1>
 	<form role="form" name="form" action="" method="post">
-		<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" />
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 		<div>
-			<label for="username">Email address</label> <input type="string"
+			<label for="username">Email address</label> <input type="text"
 				name="username" id="username" value="${form.username}" required autofocus />
 		</div>
 		<div>
@@ -47,7 +48,7 @@
 		</c:forEach>
 	</spring:bind>
 
+	<script type="text/javascript" src="../webjars/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
-Contact GitHub API Training Shop Blog About © 2017 GitHub, Inc. Terms
-Privacy Security Status Help

@@ -20,7 +20,9 @@ public class CategorieAge implements Serializable {
 	@Column(name="idcategorie_age")
 	private int idcategorieAge;
 
-	private String ages;
+	private Integer ageMin;
+	
+	private Integer ageMax;
 
 	//bi-directional many-to-one association to ProduitGenresAge
 	@OneToMany(mappedBy="categorieAge")
@@ -37,12 +39,20 @@ public class CategorieAge implements Serializable {
 		this.idcategorieAge = idcategorieAge;
 	}
 
-	public String getAges() {
-		return this.ages;
+	public Integer getAgeMin() {
+		return ageMin;
 	}
 
-	public void setAges(String ages) {
-		this.ages = ages;
+	public void setAgeMin(Integer ageMin) {
+		this.ageMin = ageMin;
+	}
+
+	public Integer getAgeMax() {
+		return ageMax;
+	}
+
+	public void setAgeMax(Integer ageMax) {
+		this.ageMax = ageMax;
 	}
 
 	public List<ProduitGenresAge> getProduitGenresAges() {
