@@ -17,6 +17,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Digits;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 /**
  * The persistent class for the produit database table.
@@ -47,7 +49,7 @@ public class Produit implements Serializable {
 	private List<Detailcommande> detailcommandes;
 
 	//bi-directional many-to-one association to VenteOuLocation
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="vente_ou_loc")
 	private VenteOuLocation venteOuLocation;
 

@@ -1,5 +1,6 @@
 package com.last.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,6 +49,12 @@ public class ProduitServiceImpl implements ProduitService {
 		System.out.println("vl "+vl.getLibelle());
 		produit.setVenteOuLocation(vl);
 		return produitRepo.save(produit);
+	}
+
+	@Override
+	public List<Produit> findByTarifBetween(BigDecimal min, BigDecimal max) {
+		System.out.println("tarif");
+		return produitRepo.findByTarifBetween(min, max);
 	}
 
 }

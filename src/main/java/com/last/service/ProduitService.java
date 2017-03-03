@@ -1,5 +1,6 @@
 package com.last.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,8 @@ public interface ProduitService {
 	public List<Produit> findAll();
 	public Optional<Produit> findByNomproduit(String nomProduit);
 //	public void saveProduit(Produit produit);
+	
+	public List<Produit> findByTarifBetween(BigDecimal min, BigDecimal max);
 	
 	Produit create(ProduitCreateForm from);
 }

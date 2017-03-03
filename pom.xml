@@ -114,7 +114,39 @@
 			<version>4.7.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.webjars.bower/angular-ui-router -->
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>angular-ui-router</artifactId>
+			<version>1.0.0-rc.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.webjars</groupId>
+					<artifactId>angular</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency> 
 
+		<!-- https://mvnrepository.com/artifact/org.webjars/angular-ui-bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>angular-ui-bootstrap</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.webjars.bower/angular-ui-slider -->
+	<!-- 	<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>angular-ui-slider</artifactId>
+			<version>0.3.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.webjars</groupId>
+					<artifactId>angular</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency> 
+ -->
 
 	</dependencies>
 

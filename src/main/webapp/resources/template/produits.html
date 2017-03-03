@@ -1,0 +1,32 @@
+<div style="width: 80%; margin:100px auto auto auto">
+
+	
+	Tarif min : <input ng-model="min" type="number" ng-change="listBetween"></input>
+	Tarif max : <input ng-model="max" type="number" ng-change="listBetween"></input>
+
+
+	<h1>Liste des produits</h1>
+
+	<table class="table table-bordered bg-info">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Libellé</th>
+				<th>Description</th>
+				<th>Tarif</th>
+				<th>Vente Ou Location</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr ng-repeat="produit in pdtListCtrl.produits">
+					<td>{{produit.nomproduit}}</td>
+					<td>{{produit.libelle}}</td>
+					<td>{{produit.description}}</td>
+					<td>{{produit.tarif}}</td>
+					<td>{{produit.venteOuLocation.libelle}}</td>
+				</tr>
+		</tbody>
+	</table>
+
+</div>

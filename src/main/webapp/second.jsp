@@ -8,17 +8,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Admin</title>
+
+<!--    CSS Links    -->
 <link rel='stylesheet'
 	href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel='stylesheet'
 	href='webjars/font-awesome/4.7.0/css/font-awesome.css'>
+	<link rel="stylesheet" href="resources/css/rzslider.css">
+	
+<!--  End CSS Links  -->
+
 </head>
 
-
-
-
-
+<body ng-app="ecommocomApp">
 
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav"
 	role="banner" style="width:auto; margin: auto;">
@@ -35,14 +38,8 @@
 		role="navigation">
 	<ul class="nav navbar-nav">
 	
-		<li class="dropdown mega-dropdown" style="width:auto">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos produits en vente<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-
-          <ul class="dropdown-menu mega-dropdown-menu row" style="width:80%; margin:auto">               
-                <li >ici les selecteurs </li>
-                <li><a href="#">Voir tous les prouits <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-          </ul>
-
+		<li style="width:auto">
+          <a ui-sref="vente" ><i class="fa fa-shopping-bag" style="margin-right: 10px;"></i>Nos produits en vente</a>
         </li>
 	
 		<li><a href="#">Nos produits en location</a></li>
@@ -65,7 +62,7 @@
 			<li ><a href="#" class="deconnexion">Déconnexion</a></li>
 		</sec:authorize>
 		<sec:authorize access="isAnonymous()">
-			<li class="active"><a href="#">Inscription</a></li>
+			<li><a href="#">Inscription</a></li>
 		</sec:authorize>
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
 		<li>
@@ -86,7 +83,14 @@
 	</nav>
 </div>
 </header>
-<body>
+
+
+<div ui-view style="margin-top: auto;"></div>
+
+
+<footer>Le footer de ouf !!!</footer>
+
+
 
 
 
@@ -137,5 +141,16 @@
 		$('#logout-form').submit();
 	});
 		</script>
+		
+	<script type="text/javascript" src="webjars/angular/1.6.2/angular.js"></script>
+	<script type="text/javascript" src="webjars/angular-ui-router/1.0.0-rc.1/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="webjars/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="webjars/angular-ui-bootstrap/2.2.0/ui-bootstrap.js"></script>
+<!--  	<script type="text/javascript" src="webjars/angular-ui-slider/0.3.2/src/slider.js"></script>
+ --> 	<script type="text/javascript" src="resources/js/app.js"></script>
+	<script type="text/javascript" src="resources/js/services/ProduitService.js"></script>
+	<script type="text/javascript" src="resources/js/controllers/ProduitController.js"></script>
+	<script type="text/javascript" src="resources/js/controllers/ProduitListController.js"></script>
+	
 </body>
 </html>
